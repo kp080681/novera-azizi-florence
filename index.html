@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azizi Florence — Sharjah | Novera Real Estate</title>
+<style>
+
+@font-face { font-family:'Garamond'; src:url(assets/fonts/EBGaramond-Regular.woff2) format('woff2'); font-weight:400; font-style:normal; }
+@font-face { font-family:'Garamond'; src:url(assets/fonts/EBGaramond-Italic.woff2) format('woff2'); font-weight:400; font-style:italic; }
+@font-face { font-family:'Garamond'; src:url(assets/fonts/EBGaramond-Bold.woff2) format('woff2'); font-weight:700; font-style:normal; }
+@font-face { font-family:'Sans'; src:url(assets/fonts/Montserrat-Regular.woff2) format('woff2'); font-weight:400; }
+@font-face { font-family:'Sans'; src:url(assets/fonts/Montserrat-Medium.woff2) format('woff2'); font-weight:500; }
+@font-face { font-family:'Sans'; src:url(assets/fonts/Montserrat-SemiBold.woff2) format('woff2'); font-weight:600; }
+
+:root {
+  --ink: #12181F;
+  --ink-soft: #1B242E;
+  --parchment: #EDE3D0;
+  --parchment-2: #E4D7BE;
+  --sienna: #A85C32;
+  --sienna-deep: #8A4A28;
+  --verdigris: #4C6B5D;
+  --gold: #B08D4F;
+  --gold-soft: #C9A972;
+  --charcoal: #2A2620;
+  --line: rgba(42,38,32,0.16);
+  --line-dark: rgba(237,227,208,0.18);
+  --max: 1180px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin:0;
+  font-family:'Sans', sans-serif;
+  background: var(--parchment);
+  color: var(--charcoal);
+  -webkit-font-smoothing: antialiased;
+  line-height:1.6;
+}
+img { display:block; max-width:100%; }
+a { color:inherit; text-decoration:none; }
+.wrap { max-width: var(--max); margin:0 auto; padding:0 32px; }
+h1,h2,h3 { font-family:'Garamond', serif; font-weight:400; margin:0; }
+.eyebrow {
+  font-family:'Sans', sans-serif;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:0.14em;
+  color: var(--sienna-deep);
+}
+.eyebrow.on-dark { color: var(--gold-soft); }
+
+/* ---------- NAV ---------- */
+.nav {
+  position: sticky; top:0; z-index:50;
+  background: var(--ink);
+  border-bottom: 1px solid rgba(176,141,79,0.35);
+}
+.nav .wrap {
+  display:flex; align-items:center; justify-content:space-between;
+  height:78px;
+}
+.nav img.logo { height:38px; }
+.nav .cta {
+  background: var(--gold);
+  color: var(--ink);
+  font-family:'Sans'; font-weight:600; font-size:14px;
+  padding:11px 22px; border-radius:3px;
+  white-space:nowrap;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position:relative;
+  min-height: 92vh;
+  display:flex; align-items:flex-end;
+  background: #000;
+}
+.hero img {
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position: center 38%;
+  opacity:0.92;
+}
+.hero::after {
+  content:''; position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(18,24,31,0.55) 0%, rgba(18,24,31,0.15) 35%, rgba(18,24,31,0.85) 100%);
+}
+.hero-content {
+  position:relative; z-index:2; color: var(--parchment);
+  padding: 80px 0 64px;
+  width:100%;
+}
+.hero h1 {
+  font-size: clamp(40px, 6vw, 76px);
+  line-height:1.06;
+  max-width: 780px;
+  color: #fff;
+}
+.hero .sub {
+  font-size:18px; max-width:520px; margin-top:22px; color: var(--parchment-2);
+  font-weight:300;
+}
+.hero .row {
+  margin-top:38px; display:flex; align-items:center; gap:28px; flex-wrap:wrap;
+}
+.btn-primary {
+  background: var(--gold);
+  color: var(--ink);
+  font-family:'Sans'; font-weight:600; font-size:15px;
+  padding:16px 34px; border-radius:3px; border:none; cursor:pointer;
+  display:inline-block;
+}
+.btn-ghost {
+  border:1px solid rgba(237,227,208,0.5);
+  color: var(--parchment);
+  font-family:'Sans'; font-weight:500; font-size:14px;
+  padding:15px 28px; border-radius:3px;
+}
+.hero .deadline {
+  font-size:13px; color: var(--gold-soft); font-weight:500; letter-spacing:0.03em;
+}
+
+/* ---------- LEDGER STRIP ---------- */
+.ledger {
+  background: var(--ink);
+  border-top:1px solid rgba(176,141,79,0.25);
+  border-bottom:1px solid rgba(176,141,79,0.25);
+  color: var(--parchment-2);
+  padding:22px 0;
+}
+.ledger .wrap {
+  display:flex; flex-wrap:wrap; gap:10px 40px; justify-content:center;
+  font-family:'Garamond'; font-size:17px;
+}
+.ledger .wrap span b { color:#fff; font-weight:700; }
+.ledger .wrap span { opacity:0.85; }
+
+/* ---------- SECTION SCAFFOLDING ---------- */
+section { padding:100px 0; }
+.section-head { max-width:640px; margin-bottom:56px; }
+.section-head h2 { font-size: clamp(30px, 3.6vw, 44px); margin-top:10px; color: var(--charcoal); }
+.section-head p { margin-top:18px; font-size:16.5px; color:#4a443a; max-width:56ch; }
+.on-dark { background: var(--ink); color: var(--parchment); }
+.on-dark .section-head p { color: var(--parchment-2); }
+.on-dark h2 { color:#fff; }
+
+/* ---------- MASTERPLAN ---------- */
+.masterplan-figure { position:relative; border-radius:2px; overflow:hidden; }
+.masterplan-figure img { width:100%; }
+.masterplan-caption {
+  display:flex; justify-content:space-between; align-items:baseline;
+  margin-top:18px; font-family:'Garamond'; font-style:italic; color:#6b6255; font-size:15px;
+  border-top:1px solid var(--line); padding-top:14px;
+}
+.arrival-quote {
+  margin-top:60px; padding-top:48px; border-top:1px solid var(--line);
+  display:grid; grid-template-columns: 1fr 2fr; gap:48px; align-items:start;
+}
+.arrival-quote .folio { font-family:'Garamond'; font-style:italic; color: var(--sienna); font-size:15px; }
+.arrival-quote blockquote {
+  margin:0; font-family:'Garamond'; font-size:26px; line-height:1.45; color:var(--charcoal);
+}
+.arrival-quote cite { display:block; margin-top:14px; font-style:normal; font-size:14px; color:#6b6255; }
+
+/* ---------- RESIDENCES ---------- */
+.residence-grid {
+  display:grid; grid-template-columns: 1.15fr 0.85fr; gap:2px; background: var(--line);
+}
+.residence-grid > div { background: var(--parchment); }
+.residence-photo { position:relative; min-height:460px; }
+.residence-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.residence-panel { padding:56px 48px; display:flex; flex-direction:column; justify-content:center; }
+.unit-row {
+  display:flex; justify-content:space-between; align-items:baseline;
+  padding:18px 0; border-top:1px solid var(--line);
+  font-family:'Garamond'; font-size:19px;
+}
+.unit-row:last-child { border-bottom:1px solid var(--line); }
+.unit-row .type { color: var(--charcoal); }
+.unit-row .from { font-size:13px; color:#8a8072; font-family:'Sans'; letter-spacing:0.04em; }
+.unit-row .price { color: var(--sienna-deep); font-weight:700; }
+
+/* ---------- LIFESTYLE GALLERY ---------- */
+.gallery {
+  display:grid; grid-template-columns: repeat(3, 1fr); gap:3px;
+}
+.gallery figure { margin:0; position:relative; overflow:hidden; aspect-ratio: 4/5; }
+.gallery figure:nth-child(1) { grid-column: span 2; aspect-ratio: 16/10; }
+.gallery img { width:100%; height:100%; object-fit:cover; transition: transform 0.6s ease; }
+.gallery figcaption {
+  position:absolute; left:0; right:0; bottom:0; padding:20px 22px;
+  background: linear-gradient(0deg, rgba(18,24,31,0.85), transparent 70%);
+  color:#fff; font-family:'Garamond'; font-size:17px;
+}
+.gallery figcaption span { display:block; font-family:'Sans'; font-size:11px; letter-spacing:0.1em; color: var(--gold-soft); margin-bottom:4px; }
+
+/* ---------- WHY NOW ---------- */
+.why-now { display:grid; grid-template-columns: 0.9fr 1.1fr; gap:64px; align-items:center; }
+.why-now .stat-block {
+  border:1px solid rgba(176,141,79,0.35); padding:40px 36px;
+}
+.why-now .stat-block .num { font-family:'Garamond'; font-size:56px; color: var(--gold-soft); line-height:1; }
+.why-now .stat-block .lbl { font-size:13px; letter-spacing:0.08em; color: var(--parchment-2); margin-top:10px; }
+.why-now p { font-size:16.5px; color: var(--parchment-2); max-width:52ch; }
+.why-now p + p { margin-top:18px; }
+
+/* ---------- EOI STEPS ---------- */
+.steps { counter-reset: step; display:grid; grid-template-columns: repeat(4,1fr); gap:0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.step { padding:32px 28px; border-left:1px solid var(--line); position:relative; }
+.step:first-child { border-left:none; }
+.step .folio {
+  font-family:'Garamond'; font-style:italic; color: var(--sienna); font-size:26px; display:block; margin-bottom:14px;
+}
+.step h4 { font-family:'Garamond'; font-size:19px; font-weight:400; margin:0 0 8px; }
+.step p { font-size:14px; color:#5a5346; margin:0; }
+
+/* ---------- ENQUIRY FORM ---------- */
+.enquiry { background: var(--parchment-2); }
+.enquiry-grid { display:grid; grid-template-columns: 1fr 1fr; gap:64px; align-items:start; }
+.enquiry form { display:grid; gap:16px; }
+.enquiry label { font-size:12.5px; letter-spacing:0.06em; color:#6b6255; display:block; margin-bottom:6px; }
+.enquiry input, .enquiry select {
+  width:100%; padding:14px 16px; border:1px solid rgba(42,38,32,0.28);
+  background:#fff; font-family:'Sans'; font-size:15px; color:var(--charcoal);
+  border-radius:2px;
+}
+.enquiry input:focus, .enquiry select:focus { outline:2px solid var(--sienna); outline-offset:1px; }
+.enquiry .row2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.enquiry button {
+  margin-top:6px; background: var(--sienna); color:#fff; border:none;
+  font-family:'Sans'; font-weight:600; font-size:15px; padding:16px 24px;
+  border-radius:2px; cursor:pointer;
+}
+.enquiry button:hover { background: var(--sienna-deep); }
+.enquiry .note { font-size:12.5px; color:#8a8072; margin-top:4px; }
+.enquiry .side blockquote { font-family:'Garamond'; font-size:22px; line-height:1.5; color:var(--charcoal); margin:0; }
+.enquiry .side cite { display:block; margin-top:14px; font-style:normal; font-size:13px; color:#6b6255; }
+
+/* ---------- FINAL CTA ---------- */
+.final-cta {
+  position:relative; padding:0; overflow:hidden;
+}
+.final-cta img { width:100%; height:520px; object-fit:cover; }
+.final-cta::after {
+  content:''; position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(18,24,31,0.5), rgba(18,24,31,0.92));
+}
+.final-cta-content {
+  position:absolute; inset:0; z-index:2;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; color:#fff; padding:0 24px;
+}
+.final-cta-content h2 { color:#fff; font-size: clamp(30px,4vw,48px); max-width:700px; }
+.final-cta-content p { color: var(--parchment-2); margin-top:16px; font-size:16px; }
+.final-cta-content .row { margin-top:34px; display:flex; gap:18px; flex-wrap:wrap; justify-content:center; }
+.final-cta-content .contact-line { margin-top:26px; font-size:14px; color: var(--gold-soft); }
+
+/* ---------- FOOTER ---------- */
+footer { background: var(--ink); color: var(--parchment-2); padding:56px 0 34px; }
+footer .wrap { display:flex; flex-direction:column; align-items:center; text-align:center; gap:16px; }
+footer img.flogo { height:60px; }
+footer .devby { display:flex; align-items:center; gap:10px; font-size:12px; letter-spacing:0.08em; color:#8f9299; }
+footer .devby img { height:20px; }
+footer .legal { font-size:11.5px; color:#6b6f75; max-width:640px; margin-top:14px; }
+footer .credit { font-size:11px; color:#565a60; margin-top:22px; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 860px) {
+  .arrival-quote { grid-template-columns:1fr; }
+  .residence-grid { grid-template-columns:1fr; }
+  .residence-photo { min-height:320px; }
+  .why-now { grid-template-columns:1fr; }
+  .steps { grid-template-columns:1fr 1fr; }
+  .step { border-left:none; border-top:1px solid var(--line); }
+  .step:nth-child(2n) { border-left:1px solid var(--line); }
+  .gallery { grid-template-columns: 1fr 1fr; }
+  .gallery figure:nth-child(1) { grid-column: span 2; }
+  .enquiry-grid { grid-template-columns:1fr; gap:36px; }
+  .enquiry .row2 { grid-template-columns:1fr; }
+  section { padding:64px 0; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <img class="logo" src="assets/img/novera-logo.png" alt="Novera Real Estate">
+    <a class="cta" href="https://wa.me/971585424430" target="_blank" rel="noopener">Chat on WhatsApp</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img src="assets/img/hero_walkway.jpg" alt="Azizi Florence walkway at golden hour">
+  <div class="hero-content">
+    <div class="wrap">
+      <span class="eyebrow on-dark">AZIZI FLORENCE &nbsp;·&nbsp; SHARJAH</span>
+      <h1 style="margin-top:14px;">Where everyday life<br>becomes art.</h1>
+      <p class="sub">A 30 million sq. ft. master community from Azizi Developments — villas, townhouses and apartments set among 1.7 million sq. ft. of parkland, ten minutes from Sharjah International Airport.</p>
+      <div class="row">
+        <a class="btn-primary" href="https://wa.me/971585424430" target="_blank" rel="noopener">Register Your Interest</a>
+        <a class="btn-ghost" href="#residences">View Residences</a>
+      </div>
+      <p class="deadline" style="margin-top:28px;">Expressions of Interest close 9 September &nbsp;·&nbsp; Pre-launch event 10 September</p>
+    </div>
+  </div>
+</header>
+
+<div class="ledger">
+  <div class="wrap">
+    <span><b>30M sq ft</b> community</span>
+    <span><b>10,700+</b> homes</span>
+    <span><b>6</b> residential clusters</span>
+    <span><b>AED 850</b> per sq ft</span>
+    <span><b>10 min</b> to the airport</span>
+  </div>
+</div>
+
+<section id="community">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">THE COMMUNITY</span>
+      <h2>A world within Sharjah.</h2>
+      <p>Six residential clusters unfold around a 1.7 million sq. ft. central park — each with its own architectural identity, connected by 11.5 kilometres of running and cycling tracks, and anchored by a main entrance designed to feel like an arrival, not just an approach.</p>
+    </div>
+
+    <figure class="masterplan-figure">
+      <img src="assets/img/masterplan.jpg" alt="Azizi Florence aerial masterplan">
+    </figure>
+    <div class="masterplan-caption">
+      <span>Azizi Florence — full masterplan, six clusters</span>
+      <span>Sharjah, UAE</span>
+    </div>
+
+    <div class="arrival-quote">
+      <div class="folio">— the arrival</div>
+      <div>
+        <blockquote>"A wing in flight." The main entrance is inspired by the spirit of the falcon — the first gesture of a community built to feel considered at every turn.</blockquote>
+        <cite>Azizi Florence, arrival experience</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="residences" class="on-dark">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow on-dark">RESIDENCES</span>
+      <h2>Homes designed without compromise.</h2>
+      <p>Three- and four-bedroom townhouses, and four-, five- and six-bedroom standalone villas — each with double-height living spaces, private pools and gardens, and interiors finished to a standard rarely offered at this price point.</p>
+    </div>
+  </div>
+  <div class="residence-grid">
+    <div class="residence-photo"><img src="assets/img/townhouse_street.jpg" alt="Azizi Florence townhouse street at golden hour"></div>
+    <div class="residence-panel">
+      <div class="unit-row">
+        <span class="type">3-Bed Townhouse<br><span class="from">Built-up area from 2,720 sq. ft.</span></span>
+        <span class="price">from AED 1.89M</span>
+      </div>
+      <div class="unit-row">
+        <span class="type">4-Bed Townhouse<br><span class="from">6.8m double-height living room</span></span>
+        <span class="price">on request</span>
+      </div>
+      <div class="unit-row">
+        <span class="type">4-Bed Standalone Villa<br><span class="from">Private lift, maid's room</span></span>
+        <span class="price">on request</span>
+      </div>
+      <div class="unit-row">
+        <span class="type">5 &amp; 6-Bed Signature Villa<br><span class="from">Private pool, driver's room</span></span>
+        <span class="price">on request</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lifestyle">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">LIFESTYLE</span>
+      <h2>Life continues beyond your door.</h2>
+      <p>The community mall, the central park, the mosque — everything a household needs is already inside the masterplan, not a drive away from it.</p>
+    </div>
+  </div>
+  <div class="gallery">
+    <figure><img src="assets/img/park_water.jpg" alt="Central park water feature"><figcaption><span>CENTRAL PARK</span>Azizi Bardini Park, six worlds in one</figcaption></figure>
+    <figure><img src="assets/img/interior_living.jpg" alt="Double-height villa living room"><figcaption><span>INTERIORS</span>Double-height living, every villa</figcaption></figure>
+    <figure><img src="assets/img/mall.jpg" alt="Community mall interior"><figcaption><span>COMMUNITY MALL</span>Shopping, dining, five destinations</figcaption></figure>
+    <figure><img src="assets/img/jogging_track.jpg" alt="Jogging and cycling track"><figcaption><span>ACTIVE LIFE</span>11.5km running &amp; cycling tracks</figcaption></figure>
+    <figure><img src="assets/img/picnic.jpg" alt="Picnic grounds at sunset"><figcaption><span>POCKET PARKS</span>Picnic grounds, food trucks, fountains</figcaption></figure>
+    <figure><img src="assets/img/mosque.jpg" alt="Community mosque"><figcaption><span>FAITH &amp; COMMUNITY</span>Two Jumma mosques within the masterplan</figcaption></figure>
+  </div>
+</section>
+
+<section id="why-now" class="on-dark">
+  <div class="wrap why-now">
+    <div class="stat-block">
+      <div class="num">AED 850</div>
+      <div class="lbl">PER SQ. FT. — AT LAUNCH</div>
+    </div>
+    <div>
+      <span class="eyebrow on-dark">WHY NOW</span>
+      <h2 style="margin-top:10px;">The case for moving early.</h2>
+      <p>Azizi Florence launches at AED 850 per sq. ft. — a price set for this pre-launch window, before the project opens to the wider market on 10 September. Sharjah's off-plan market has consistently rewarded early entry as infrastructure and demand mature around a project of this scale.</p>
+      <p>Novera Real Estate holds pre-launch access to Azizi Florence. Registering your interest now, before the EOI window closes, is what determines priority when unit allocation opens.</p>
+    </div>
+  </div>
+</section>
+
+<section id="eoi">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">RESERVE YOUR PLACE</span>
+      <h2>How to secure priority access.</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="folio">i.</span><h4>Register your interest</h4><p>Before the EOI window closes on 9 September.</p></div>
+      <div class="step"><span class="folio">ii.</span><h4>Submit the EOI amount</h4><p>AED 60,000 secures your place in the allocation queue.</p></div>
+      <div class="step"><span class="folio">iii.</span><h4>Join the pre-launch event</h4><p>10 September — meet the team, see the plans in full.</p></div>
+      <div class="step"><span class="folio">iv.</span><h4>Receive priority allocation</h4><p>Registered buyers are matched to units ahead of public launch.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="enquire" class="enquiry">
+  <div class="wrap enquiry-grid">
+    <div>
+      <span class="eyebrow">ENQUIRE NOW</span>
+      <h2 style="margin-top:10px; font-size:34px;">Request your priority callback.</h2>
+      <p style="margin-top:14px; font-size:15.5px; color:#5a5346;">Leave your details and a Novera advisor will contact you directly — or message us on WhatsApp for an immediate response.</p>
+      <form id="enquiry-form" style="margin-top:28px;">
+        <div>
+          <label for="f-name">Full name</label>
+          <input id="f-name" name="name" type="text" required placeholder="Your full name">
+        </div>
+        <div class="row2">
+          <div>
+            <label for="f-phone">Phone / WhatsApp</label>
+            <input id="f-phone" name="phone" type="tel" required placeholder="+971 5X XXX XXXX">
+          </div>
+          <div>
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" placeholder="you@email.com">
+          </div>
+        </div>
+        <div>
+          <label for="f-unit">Interested in</label>
+          <select id="f-unit" name="unit">
+            <option>3-Bed Townhouse</option>
+            <option>4-Bed Townhouse</option>
+            <option>4-Bed Standalone Villa</option>
+            <option>5 &amp; 6-Bed Signature Villa</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <button type="submit">Request Callback</button>
+        <p class="note">Submitting sends your details to a Novera advisor via WhatsApp. EOI closes 9 September.</p>
+      </form>
+    </div>
+    <div class="side">
+      <blockquote>"A new launch in Sharjah is here from Azizi Developments, bringing an extraordinary lifestyle within reach."</blockquote>
+      <cite>Azizi Developments, Azizi Florence launch statement</cite>
+    </div>
+  </div>
+</section>
+
+<div class="final-cta">
+  <img src="assets/img/villa_twilight.jpg" alt="Azizi Florence villa at twilight">
+  <div class="final-cta-content">
+    <span class="eyebrow on-dark">NOVERA REAL ESTATE</span>
+    <h2>Speak to us before 9 September.</h2>
+    <p>Priority access to Azizi Florence, direct from your local broker.</p>
+    <div class="row">
+      <a class="btn-primary" href="https://wa.me/971585424430" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <a class="btn-ghost" href="tel:+971585424430">Call +971 58 542 4430</a>
+    </div>
+    <div class="contact-line">noverarealty.ae</div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <img class="flogo" src="assets/img/novera-logo.png" alt="Novera Real Estate">
+    <div class="devby">A DEVELOPMENT BY <img src="assets/img/azizi-logo.png" alt="Azizi Developments"></div>
+    <p class="legal">Renders and imagery are for illustrative purposes only. Prices, availability, EOI terms and event dates are subject to Azizi Developments' final approval and may change without notice. Novera Real Estate acts as an authorised broker for this development.</p>
+    <div class="credit">© Novera Real Estate — Sharjah · Dubai · Ajman</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('enquiry-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var name = document.getElementById('f-name').value.trim();
+  var phone = document.getElementById('f-phone').value.trim();
+  var email = document.getElementById('f-email').value.trim();
+  var unit = document.getElementById('f-unit').value;
+  var msg = "Hi Novera, I'd like to register my interest in Azizi Florence.%0A%0A" +
+            "Name: " + encodeURIComponent(name) + "%0A" +
+            "Phone: " + encodeURIComponent(phone) + "%0A" +
+            (email ? "Email: " + encodeURIComponent(email) + "%0A" : "") +
+            "Interested in: " + encodeURIComponent(unit);
+  window.open("https://wa.me/971585424430?text=" + msg, "_blank");
+});
+</script>
+
+</body>
+</html>
